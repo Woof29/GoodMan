@@ -231,7 +231,7 @@ img {
 .header .navbar {
   width: 100%;
   display: flex;
-  margin: 15px 10px;
+  margin: 15px 0px;
 }
 .header .navbar .navbar_items:not(:first-of-type) {
   margin-left: 100px;
@@ -250,7 +250,6 @@ img {
   font-weight: 500;
   border: none;
   background: transparent;
-  padding-left: 10px;
 }
 
 :root {

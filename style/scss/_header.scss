@@ -60,7 +60,7 @@
   .navbar {
     width: 100%;
     display: flex;
-    margin: 15px 10px;
+    margin: 15px 0px;
     .navbar_items {
       &:not(:first-of-type) {
         margin-left: 100px;
@@ -71,15 +71,6 @@
     .DPList {
       margin-right: 50px;
       position: relative;
-      // &::after {
-      //   content: ">";
-      //   position: absolute;
-      //   top: 0;
-      //   right: 0;
-      //   font-weight: 500;
-      //   z-index: -1;
-      //   transform: rotate(90deg);
-      // }
       select {
         font-family: "Noto Sans TC", sans-serif;
         border: none;
@@ -88,7 +79,7 @@
         font-weight: 500;
         border: none;
         background: transparent;
-        padding-left: 10px;
+        // padding-left: 10px;
       }
     }
   }
