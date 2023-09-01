@@ -1,1 +1,13 @@
-@import "../scss/cssReset";
+@import "../style/scss/reset";
+
+:root {
+  font-family: "Noto Sans TC", sans-serif;
+  color-scheme: light;
+  color: rgb(0, 0, 0);
+  background-color: #fff;
+  /* font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%; */
+}

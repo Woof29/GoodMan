@@ -3,11 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/style/all.css" />
     <title>GoodMan</title>
   </head>
   <body>
-    <div class="wrap"></div>
+    <div class="wrap">
+      <div class="header">
+        <h1 class="header_LOGO"><a href="#">品牌LOGO</a></h1>
+        <div class="header_searchbar"><input type="text" /></div>
+        <div class="header_login"><button class="login_btn">Login</button></div>
+        <ul class="navbar">
+          <li class="navbar_items DPList">
+            <select name="district" id="district-sel">
+              <option value="central">中區</option>
+              <option value="east">東區</option>
+              <option value="west">西區</option>
+              <option value="south">南區</option>
+              <option value="north">北區</option>
+              <option value="xitun">西屯區</option>
+              <option value="nantun">南屯區</option>
+              <option value="beitun">北屯區</option>
+              <option value="mountain">山線</option>
+              <option value="seaLine">海線</option>
+              <option value="village">屯區</option>
+            </select>
+          </li>
+          <li class="navbar_items contact"><a href="#">聯絡我們</a></li>
+          <li class="navbar_items support"><a href="#">尋求幫助</a></li>
+          <li class="navbar_items dateMe"><a href="#">約我吃拉麵</a></li>
+        </ul>
+      </div>
+
+      <div class="banner">
+        <img src="https://fakeimg.pl/1200x800/200" />
+      </div>
+
+      <div class="boxList">
+        <div class="boxList_card">
+          <div class="boxList_card_pic">
+            <img src="https://fakeimg.pl/300x200/200" />
+          </div>
+          <div class="boxList_card_info">
+            <h3 class="title"></h3>
+            <div class="address"></div>
+            <div class="rate"></div>
+          </div>
+        </div>
+
+        <button class="boxList_btn btn--viewAll"></button>
+      </div>
+
+      <div class="footer">
+        <div class="footer_pic">
+          <img src="https://fakeimg.pl/200x200/200" />
+        </div>
+        <ul class="footer_info">
+          <li class="phone"></li>
+          <li class="IGAccount"></li>
+          <li class="email"></li>
+        </ul>
+        &copy;2023
+      </div>
+    </div>
 
     <script src="/index.js"></script>
   </body>
