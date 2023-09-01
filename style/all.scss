@@ -1,13 +1,21 @@
 @import "../style/scss/reset";
+@import "../style/scss/header";
 
 :root {
   font-family: "Noto Sans TC", sans-serif;
   color-scheme: light;
   color: rgb(0, 0, 0);
-  background-color: #fff;
+  background-color: #f9f3ee;
   /* font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%; */
+}
+.wrap {
+  padding: 10px 5px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
 }
