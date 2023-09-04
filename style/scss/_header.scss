@@ -18,6 +18,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    a {
+      @include imgToTxt;
+      height: 100%;
+      background: url(/assets/LOGO/GOODMAN_LOGO_工作區域\ 1.png) no-repeat
+        center 50% / 110%;
+    }
   }
   .header_searchbar {
     width: 33.333%;
@@ -41,7 +47,7 @@
       border-radius: 35px;
       height: 30px;
       border: 1px solid #2c2c2c;
-      box-shadow: 1px 2px rgba($color: #080808, $alpha: 0.8);
+      box-shadow: 1px 2px rgba($color: #152618, $alpha: 0.8);
       padding-left: 45px;
     }
   }
@@ -61,10 +67,12 @@
     width: 100%;
     display: flex;
     margin: 15px 0px;
+    overflow: hidden;
+    white-space: nowrap;
     .navbar_items {
       &:not(:first-of-type) {
         margin-left: 100px;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 500;
       }
     }
@@ -79,7 +87,6 @@
         font-weight: 500;
         border: none;
         background: transparent;
-        // padding-left: 10px;
       }
     }
   }

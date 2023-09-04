@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body,
 div,
@@ -162,10 +163,10 @@ img {
   vertical-align: middle;
 }
 
-.header .header_login .login_btn {
+.banner .banner_txtBox .btn--viewMore, .header .header_login .login_btn {
   border: none;
   outline: none;
-  background: #030c18;
+  background: #152618;
   color: #fff;
   padding: 8px 12px;
   border-radius: 35px;
@@ -192,6 +193,13 @@ img {
   justify-content: flex-start;
   align-items: center;
 }
+.header .header_LOGO a {
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 100%;
+  background: url(/assets/LOGO/GOODMAN_LOGO_工作區域\ 1.png) no-repeat center 50%/110%;
+}
 .header .header_searchbar {
   width: 33.333%;
   display: flex;
@@ -214,7 +222,7 @@ img {
   border-radius: 35px;
   height: 30px;
   border: 1px solid #2c2c2c;
-  box-shadow: 1px 2px rgba(8, 8, 8, 0.8);
+  box-shadow: 1px 2px rgba(21, 38, 24, 0.8);
   padding-left: 45px;
 }
 .header .header_login {
@@ -232,10 +240,12 @@ img {
   width: 100%;
   display: flex;
   margin: 15px 0px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .header .navbar .navbar_items:not(:first-of-type) {
   margin-left: 100px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 }
 .header .navbar .DPList {
@@ -252,11 +262,89 @@ img {
   background: transparent;
 }
 
+.banner .banner_txtBox .btn--viewMore, .header .header_login .login_btn {
+  border: none;
+  outline: none;
+  background: #152618;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 35px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.banner {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner .banner_txtBox {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 50%;
+  height: 300px;
+  padding: 15px 15px 15px 0;
+}
+.banner .banner_txtBox .title {
+  font-size: 28px;
+  font-weight: 900;
+  color: #000;
+  margin: 20px 0;
+}
+.banner .banner_txtBox .content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 40px;
+}
+.banner .banner_txtBox .btn--viewMore {
+  height: 30px;
+  font-size: 14px;
+  line-height: 1;
+  width: 90px;
+  white-space: nowrap;
+  align-self: flex-end;
+}
+.banner .banner_pic {
+  width: 50%;
+  height: 300px;
+  padding: 15px 0 15px 15px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.banner .banner_pic::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 75%;
+  bottom: 1px;
+  right: 14%;
+  border-radius: 35px;
+  border: 5px solid #bc2333;
+  background: #152618;
+}
+.banner .banner_pic img {
+  width: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 35px;
+  position: relative;
+}
+
 :root {
   font-family: "Noto Sans TC", sans-serif;
   color-scheme: light;
   color: rgb(0, 0, 0);
-  background-color: #f9f3ee;
+  background-color: white;
   /* font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -265,7 +353,7 @@ img {
 }
 
 .wrap {
-  padding: 10px 5px;
+  padding: 20px 10px;
   width: 100%;
   max-width: 1200px;
   margin: auto;
