@@ -3,11 +3,14 @@
 
 .header {
   width: 100%;
-  position: static;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
+  background: #ffff;
+  padding-top: 20px;
   display: flex;
   flex-flow: row wrap;
   align-items: center;

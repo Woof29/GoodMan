@@ -1,0 +1,74 @@
+@import "../scss/method";
+@import "../scss/variable";
+
+.boxList {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  .boxList_headline {
+    font-size: 24px;
+    font-weight: 900;
+    margin: 15px auto 10px auto;
+  }
+  .boxList_card {
+    width: calc(100% / 4);
+    padding: 10px;
+    border: 2px solid $color--dark;
+    border-radius: 10px;
+    .boxList_card_pic {
+      width: 100%;
+      margin-bottom: 10px;
+      img {
+        height: 40%;
+        border-radius: 10px;
+      }
+    }
+    .boxList_card_info {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: flex-start;
+      .title {
+        font-size: 18px;
+        color: #000;
+        margin-bottom: 5px;
+        white-space: nowrap;
+      }
+      .address {
+        font-size: 16px;
+        color: #000;
+        margin-bottom: 5px;
+        @include txtChip(2);
+      }
+      .rate {
+        width: 100%;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: url(/assets/icon/rating.png) no-repeat center center /
+            cover;
+          height: 50px;
+          width: 100%;
+          overflow: hidden;
+          transform: scale(0.45);
+        }
+        img {
+          height: 30px;
+          object-fit: cover;
+          transform: scale(0.5);
+        }
+      }
+      .fourPointNine {
+        &::before {
+          // width: 80%;
+        }
+      }
+    }
+  }
+}
