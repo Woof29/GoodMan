@@ -24,7 +24,7 @@
     a {
       @include imgToTxt;
       height: 100%;
-      background: url(../../assets/LOGO/GOODMAN_LOGO_工作區域\ 1.png) no-repeat
+      background: url(../assets/LOGO/GOODMAN_LOGO_工作區域\ 1.png) no-repeat
         center 50% / 110%;
     }
   }
@@ -41,7 +41,7 @@
       left: 0;
       width: 50px;
       height: 30px;
-      background: url(../../assets/icon/magnifying-glass.png) no-repeat center
+      background: url(../assets/icon/magnifying-glass.png) no-repeat center
         center / 40%;
       opacity: 0.7;
     }
