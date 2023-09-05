@@ -1,0 +1,72 @@
+@import "../scss/method";
+@import "../scss/variable";
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .footer_LOGO {
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 50px;
+    a {
+      @include imgToTxt;
+      height: 100%;
+      background: url(../assets/LOGO/GOODMAN_LOGO_工作區域\ 1.png) no-repeat
+        center / 110%;
+      transform: scale(1.5);
+    }
+  }
+  .footer_info {
+    width: 50%;
+    li {
+      padding-left: 30px;
+    }
+    .phone {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 5px;
+        height: 16px;
+        width: 16px;
+        background: url(../assets/icon/phone_icon.png) no-repeat center / cover;
+      }
+    }
+    .IGAccount {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: -0;
+        top: 6px;
+        height: 16px;
+        width: 16px;
+        background: url(../assets/icon/instagram_icon.png) no-repeat center /
+          cover;
+      }
+    }
+
+    .email {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 5px;
+        height: 16px;
+        width: 20px;
+        background: url(../assets/icon/email_icon.png) no-repeat center / cover;
+      }
+    }
+  }
+}
+.copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
