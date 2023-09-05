@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html,
 body,
 div,
@@ -201,7 +200,7 @@ img {
   overflow: hidden;
   white-space: nowrap;
   height: 100%;
-  background: url(../assets/LOGO/GOODMAN_LOGO_工作區域\ 1.png) no-repeat center/110%;
+  background: url(../assets/LOGO/GOODMAN_LOGO.png) no-repeat center/100%;
 }
 .header .header_searchbar {
   width: 33.333%;
@@ -370,13 +369,11 @@ img {
 .boxList .cardBox {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
   width: 100%;
   overflow-x: scroll;
 }
 .boxList .cardBox::-webkit-scrollbar {
   height: 5px;
-  color: #152618;
 }
 .boxList .cardBox .card {
   width: 25%;
@@ -455,7 +452,7 @@ img {
   font-weight: 500;
 }
 .boxList .btn--viewMore {
-  margin: 20px auto 0 auto;
+  margin: 10px auto 0 auto;
 }
 
 .header .header_login .login_btn, .banner .banner_txtBox .btn--viewMore, .boxList .btn--viewMore {
@@ -487,7 +484,7 @@ img {
   overflow: hidden;
   white-space: nowrap;
   height: 100%;
-  background: url(../assets/LOGO/GOODMAN_LOGO_工作區域\ 1.png) no-repeat center/110%;
+  background: url(../assets/LOGO/GOODMAN_LOGO.png) no-repeat center/100%;
   transform: scale(1.5);
 }
 .footer .footer_info {

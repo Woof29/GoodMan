@@ -16,12 +16,10 @@
   .cardBox {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
     width: 100%;
     overflow-x: scroll;
     &::-webkit-scrollbar {
       height: 5px;
-      color: $color--dark;
     }
     .card {
       width: calc(100% / 4);
@@ -96,6 +94,6 @@
   }
   .btn--viewMore {
     @extend %btn--reset;
-    margin: 20px auto 0 auto;
+    margin: 10px auto 0 auto;
   }
 }
