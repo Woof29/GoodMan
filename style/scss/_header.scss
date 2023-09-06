@@ -15,7 +15,6 @@
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
-  // border-bottom: 1px solid #000;
 
   .header_LOGO {
     width: 33.333%;
@@ -132,6 +131,7 @@
         position: absolute;
         top: 100%;
         left: 0;
+        padding-top: 10px;
         padding-left: 45px;
         background: #ffff;
         width: 19%;

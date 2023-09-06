@@ -498,3 +498,23 @@ const taichungRamen = [
     rate: "4.6",
   },
 ];
+
+//For boxList card
+const cardBox = document.querySelector(".cardBox");
+function printCard() {
+  let len = taichungRamen.length;
+  let str = "";
+  // console.log(taichungRamen[1].rate);
+  for (let i = 0; i < len; i++) {
+    str +=
+      '<a href="#" class="card"><div class="card_pic"><img src="https://fakeimg.pl/300x200/200" ></div><div class="card_info"><h3 class="title">' +
+      taichungRamen[i].name +
+      '</h3><div class="address">地址: <span>' +
+      taichungRamen[i].address +
+      '</span></div><div class="rate"><div class="rating"><img src="assets/icon/RTstars.png" class="cropped" alt="評分星星"/><span>' +
+      taichungRamen[i].rate +
+      '</span></div><img src="assets/icon/ETstars.png" class="nocrop" alt="空星星"/></div></div></a>';
+  }
+  cardBox.innerHTML = str;
+}
+printCard();

@@ -16,13 +16,15 @@
   .cardBox {
     display: flex;
     flex-flow: row nowrap;
+    align-content: center;
     width: 100%;
     overflow-x: scroll;
     &::-webkit-scrollbar {
       height: 5px;
     }
     .card {
-      width: calc(100% / 4);
+      flex-basis: calc(100% / 4);
+      min-width: 200px;
       margin: 0 5px 5px 5px;
       padding: 10px;
       border: 2px solid $color--dark;
@@ -41,11 +43,12 @@
         justify-content: center;
         align-items: flex-start;
         .title {
+          @include txtChip(1);
           font-size: 18px;
           font-weight: 900;
           color: #000;
           margin-bottom: 5px;
-          white-space: nowrap;
+          // white-space: nowrap;
         }
         .address {
           font-size: 16px;
