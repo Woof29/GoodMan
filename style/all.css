@@ -165,12 +165,17 @@ img {
 .boxList .btn--viewMore, .banner .banner_txtBox .btn--viewMore, .header .header_login .login_btn {
   border: none;
   outline: none;
-  background: #152618;
+  background: #bc2333;
   color: #fff;
   padding: 8px 12px;
   border-radius: 35px;
   cursor: pointer;
   text-align: center;
+}
+.boxList .btn--viewMore:active, .banner .banner_txtBox .btn--viewMore:active, .header .header_login .login_btn:active {
+  transform: translateY(3px);
+  box-shadow: 1px 2px 2px rgba(21, 38, 24, 0.8);
+  transition: 0.2s ease-in-out;
 }
 
 .header {
@@ -249,12 +254,36 @@ img {
   margin-left: 100px;
   font-size: 16px;
   font-weight: 500;
+  position: relative;
+}
+.header .navbar .navbar_items:not(:first-of-type) a {
+  position: relative;
+  padding-bottom: 2px;
+}
+.header .navbar .navbar_items:not(:first-of-type) a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-bottom: 2px solid #bc2333;
+  transition: 0.3s;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+}
+.header .navbar .navbar_items:not(:first-of-type) a:hover {
+  color: #152618;
+}
+.header .navbar .navbar_items:not(:first-of-type) a:hover::after {
+  transform: scaleX(1);
 }
 .header .navbar .DPList {
   margin-right: 50px;
   position: relative;
 }
 .header .navbar .DPList select {
+  cursor: pointer;
   font-family: "Noto Sans TC", sans-serif;
   border: none;
   outline: none;
@@ -267,12 +296,17 @@ img {
 .boxList .btn--viewMore, .banner .banner_txtBox .btn--viewMore, .header .header_login .login_btn {
   border: none;
   outline: none;
-  background: #152618;
+  background: #bc2333;
   color: #fff;
   padding: 8px 12px;
   border-radius: 35px;
   cursor: pointer;
   text-align: center;
+}
+.boxList .btn--viewMore:active, .banner .banner_txtBox .btn--viewMore:active, .header .header_login .login_btn:active {
+  transform: translateY(3px);
+  box-shadow: 1px 2px 2px rgba(21, 38, 24, 0.8);
+  transition: 0.2s ease-in-out;
 }
 
 .banner {
@@ -345,12 +379,17 @@ img {
 .boxList .btn--viewMore, .header .header_login .login_btn, .banner .banner_txtBox .btn--viewMore {
   border: none;
   outline: none;
-  background: #152618;
+  background: #bc2333;
   color: #fff;
   padding: 8px 12px;
   border-radius: 35px;
   cursor: pointer;
   text-align: center;
+}
+.boxList .btn--viewMore:active, .header .header_login .login_btn:active, .banner .banner_txtBox .btn--viewMore:active {
+  transform: translateY(3px);
+  box-shadow: 1px 2px 2px rgba(21, 38, 24, 0.8);
+  transition: 0.2s ease-in-out;
 }
 
 .boxList {
@@ -458,12 +497,17 @@ img {
 .header .header_login .login_btn, .banner .banner_txtBox .btn--viewMore, .boxList .btn--viewMore {
   border: none;
   outline: none;
-  background: #152618;
+  background: #bc2333;
   color: #fff;
   padding: 8px 12px;
   border-radius: 35px;
   cursor: pointer;
   text-align: center;
+}
+.header .header_login .login_btn:active, .banner .banner_txtBox .btn--viewMore:active, .boxList .btn--viewMore:active {
+  transform: translateY(3px);
+  box-shadow: 1px 2px 2px rgba(21, 38, 24, 0.8);
+  transition: 0.2s ease-in-out;
 }
 
 .footer {
