@@ -1,3 +1,23 @@
+:root {
+  font-family: "Noto Sans TC", sans-serif;
+  color-scheme: light;
+  color: rgb(0, 0, 0);
+  background-color: white;
+  /* font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%; */
+}
+
+.wrap {
+  padding: 20px 10px 0 10px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
 html,
 body,
 div,
@@ -174,7 +194,7 @@ img {
 }
 .boxList .btn--viewMore:active, .banner .banner_txtBox .btn--viewMore:active, .header .header_login .login_btn:active {
   transform: translateY(3px);
-  box-shadow: 1px 2px 2px rgba(21, 38, 24, 0.8);
+  box-shadow: 1px 2px 0 rgba(21, 38, 24, 0.8);
   transition: 0.2s ease-in-out;
 }
 
@@ -199,6 +219,7 @@ img {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  background: white;
 }
 .header .header_LOGO a {
   text-indent: 101%;
@@ -249,14 +270,12 @@ img {
   margin: 15px 0px;
   overflow: hidden;
   white-space: nowrap;
+  background: white;
 }
 .header .navbar .navbar_items:not(:first-of-type) {
   margin-left: 100px;
   font-size: 16px;
   font-weight: 500;
-  position: relative;
-}
-.header .navbar .navbar_items:not(:first-of-type) a {
   position: relative;
   padding-bottom: 2px;
 }
@@ -279,18 +298,72 @@ img {
   transform: scaleX(1);
 }
 .header .navbar .DPList {
-  margin-right: 50px;
+  margin-right: 25px;
+}
+.header .navbar .DPList > a {
+  padding-right: 25px;
   position: relative;
 }
-.header .navbar .DPList select {
-  cursor: pointer;
-  font-family: "Noto Sans TC", sans-serif;
-  border: none;
-  outline: none;
+.header .navbar .DPList > a .icon-arrow {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 1px;
+  right: 0;
+  transform: rotate(0deg);
+  transition: 0.3s ease-in-out;
+}
+.header .navbar .DPList > a .icon-arrow--open {
+  transform: rotate(-180deg);
+}
+.header .navbar .DPList .district {
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: flex-start;
+  height: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding-left: 45px;
+  background: white;
+  width: 19%;
+  border-radius: 5px;
+  box-shadow: 5px 8px 10px rgba(21, 38, 24, 0.5);
+  transition: 0.3s ease-in-out;
+}
+.header .navbar .DPList .district--show {
+  visibility: visible;
+  height: 265%;
+}
+.header .navbar .DPList .district .district_items {
   font-size: 16px;
   font-weight: 500;
-  border: none;
-  background: transparent;
+  width: 20%;
+}
+.header .navbar .DPList .district .district_items a {
+  margin-top: 5px;
+  display: inline-block;
+  position: relative;
+}
+.header .navbar .DPList .district .district_items a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-bottom: 2px solid #bc2333;
+  transition: 0.3s;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+}
+.header .navbar .DPList .district .district_items a:hover {
+  color: #152618;
+}
+.header .navbar .DPList .district .district_items a:hover::after {
+  transform: scaleX(1);
 }
 
 .boxList .btn--viewMore, .banner .banner_txtBox .btn--viewMore, .header .header_login .login_btn {
@@ -305,7 +378,7 @@ img {
 }
 .boxList .btn--viewMore:active, .banner .banner_txtBox .btn--viewMore:active, .header .header_login .login_btn:active {
   transform: translateY(3px);
-  box-shadow: 1px 2px 2px rgba(21, 38, 24, 0.8);
+  box-shadow: 1px 2px 0 rgba(21, 38, 24, 0.8);
   transition: 0.2s ease-in-out;
 }
 
@@ -388,7 +461,7 @@ img {
 }
 .boxList .btn--viewMore:active, .header .header_login .login_btn:active, .banner .banner_txtBox .btn--viewMore:active {
   transform: translateY(3px);
-  box-shadow: 1px 2px 2px rgba(21, 38, 24, 0.8);
+  box-shadow: 1px 2px 0 rgba(21, 38, 24, 0.8);
   transition: 0.2s ease-in-out;
 }
 
@@ -506,7 +579,7 @@ img {
 }
 .header .header_login .login_btn:active, .banner .banner_txtBox .btn--viewMore:active, .boxList .btn--viewMore:active {
   transform: translateY(3px);
-  box-shadow: 1px 2px 2px rgba(21, 38, 24, 0.8);
+  box-shadow: 1px 2px 0 rgba(21, 38, 24, 0.8);
   transition: 0.2s ease-in-out;
 }
 
@@ -578,24 +651,4 @@ img {
   width: 100%;
   text-align: center;
   margin-top: 10px;
-}
-
-:root {
-  font-family: "Noto Sans TC", sans-serif;
-  color-scheme: light;
-  color: rgb(0, 0, 0);
-  background-color: white;
-  /* font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%; */
-}
-
-.wrap {
-  padding: 20px 10px;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  position: relative;
 }/*# sourceMappingURL=all.css.map */

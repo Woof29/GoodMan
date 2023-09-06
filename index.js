@@ -1,3 +1,31 @@
+//navbar的下拉選單
+let dropDownBtn = document.querySelector(".DPList");
+let districtMenu = document.querySelector(".district");
+let iconArrow = document.querySelector(".icon-arrow");
+
+dropDownBtn.addEventListener("click", showDistrictMenu, true);
+function showDistrictMenu(e) {
+  e.preventDefault();
+  let node = e.target.nodeName;
+  if (node == "A" || node == "IMG") {
+    districtMenu.classList.toggle("district--show");
+    iconArrow.classList.toggle("icon-arrow--open");
+  } else {
+    return;
+  }
+} //開關下拉式選單
+
+window.addEventListener("click", closeDistrictMenu);
+function closeDistrictMenu(e) {
+  e.preventDefault();
+  let node = e.target.nodeName;
+  if (node !== "A" && node !== "IMG" && node !== "UL") {
+    districtMenu.classList.remove("district--show");
+    iconArrow.classList.remove("icon-arrow--open");
+  }
+} //點擊空白處關閉選單
+
+//台中拉麵店家資料
 const taichungRamen = [
   {
     name: "無魚Shrimp Ramen",

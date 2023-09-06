@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style/all.css" />
     <title>GoodMan</title>
   </head>
-  <body>
+  <body id="body">
     <div class="wrap">
       <div class="header">
         <h1 class="header_LOGO"><a href="#">品牌LOGO</a></h1>
@@ -23,24 +23,26 @@
         <div class="header_login"><button class="login_btn">Login</button></div>
         <ul class="navbar">
           <li class="navbar_items DPList">
-            <select name="district" id="district-sel">
-              <option selected disabled>請選擇區域</option>
-              <option value="central">中區</option>
-              <option value="east">東區</option>
-              <option value="west">西區</option>
-              <option value="south">南區</option>
-              <option value="north">北區</option>
-              <option value="xitun">西屯區</option>
-              <option value="nantun">南屯區</option>
-              <option value="beitun">北屯區</option>
-              <option value="mountain">山線</option>
-              <option value="seaLine">海線</option>
-              <option value="village">屯區</option>
-            </select>
+            <a href="#" data-toggle="dropdown"
+              >請選擇區域<img src="assets/icon/down.png" class="icon-arrow"
+            /></a>
+            <ul class="district" id="district-sel">
+              <li class="district_items" id="central"><a href="#">中區</a></li>
+              <li class="district_items" id="east"><a href="#">東區</a></li>
+              <li class="district_items" id="west"><a href="#">西區</a></li>
+              <li class="district_items" id="south"><a href="#">南區</a></li>
+              <li class="district_items" id="north"><a href="#">北區</a></li>
+              <li class="district_items" id="xitun"><a href="#">西屯區</a></li>
+              <li class="district_items" id="nantun"><a href="#">南屯區</a></li>
+              <li class="district_items" id="beitun"><a href="#">北屯區</a></li>
+              <li class="district_items" id="mountain"><a href="#">山線</a></li>
+              <li class="district_items" id="seaLine"><a href="#">海線</a></li>
+              <li class="district_items" id="village"><a href="#">屯區</a></li>
+            </ul>
           </li>
           <li class="navbar_items contact"><a href="#">聯絡我</a></li>
           <li class="navbar_items support"><a href="#">尋求幫助</a></li>
-          <li class="navbar_items dateMe"><a href="#">約我吃拉麵</a></li>
+          <li class="navbar_items dateMe"><a href="#">請我吃拉麵</a></li>
         </ul>
       </div>
 
@@ -102,6 +104,6 @@
       <div class="copyright">&copy;2023</div>
     </div>
 
-    <script src="index.html"></script>
+    <script src="index.js"></script>
   </body>
 </html>
