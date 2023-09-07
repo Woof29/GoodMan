@@ -1,8 +1,10 @@
+@import "../style/scss/method";
 :root {
   font-family: "Noto Sans TC", sans-serif;
   color-scheme: light;
   color: rgb(0, 0, 0);
-  background-color: #ffff;
+  background-color: #fff;
+  // position: relative;
   /* font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,7 +16,10 @@
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  position: relative;
+  // position: relative;
+  @include rwd(768) {
+    padding: 130px 20px 0 20px;
+  }
 }
 
 @import "../style/scss/reset";

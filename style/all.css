@@ -1,8 +1,24 @@
+.boxList .btn--viewMore, .banner .banner_txtBox .btn--viewMore, .header .header_login .login_btn {
+  border: none;
+  outline: none;
+  background: #bc2333;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 35px;
+  cursor: pointer;
+  text-align: center;
+}
+.boxList .btn--viewMore:active, .banner .banner_txtBox .btn--viewMore:active, .header .header_login .login_btn:active {
+  transform: translateY(3px);
+  box-shadow: 1px 2px 0 rgba(21, 38, 24, 0.8);
+  transition: 0.2s ease-in-out;
+}
+
 :root {
   font-family: "Noto Sans TC", sans-serif;
   color-scheme: light;
   color: rgb(0, 0, 0);
-  background-color: white;
+  background-color: #fff;
   /* font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,7 +31,11 @@
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .wrap {
+    padding: 130px 20px 0 20px;
+  }
 }
 
 html,
@@ -207,11 +227,55 @@ img {
   bottom: 0;
   z-index: 1;
   background: white;
-  padding-top: 20px;
+  padding: 20px 10px;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    overflow: hidden;
+    padding: 20px 20px;
+    position: fixed;
+    align-content: start;
+    height: 130px;
+    transition: 0.3s ease-in-out;
+  }
+  .header.menuExtend {
+    height: 322px;
+  }
+  .header.sonMenuExtend {
+    height: 630px;
+  }
+  .header .header_hamburgerIcon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 33.333%;
+  }
+  .header .header_hamburgerIcon.active .bar:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+  }
+  .header .header_hamburgerIcon.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .header .header_hamburgerIcon.active .bar:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+  }
+  .header .header_hamburgerIcon .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 2px 0;
+    transition: 0.2s ease-in-out;
+  }
+  .header .header_hamburgerIcon .bar:nth-child(2) {
+    margin-top: 6px;
+  }
+  .header .header_hamburgerIcon .bar:nth-child(3) {
+    margin-top: 6px;
+  }
 }
 .header .header_LOGO {
   width: 33.333%;
@@ -228,12 +292,24 @@ img {
   height: 100%;
   background: url(../assets/LOGO/GOODMAN_LOGO.png) no-repeat center/100%;
 }
+@media screen and (max-width: 768px) {
+  .header .header_LOGO {
+    justify-content: center;
+  }
+}
 .header .header_searchbar {
   width: 33.333%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+}
+@media screen and (max-width: 768px) {
+  .header .header_searchbar {
+    width: 100%;
+    order: 3;
+    margin-top: 10px;
+  }
 }
 .header .header_searchbar::before {
   content: "";
@@ -272,10 +348,28 @@ img {
   white-space: nowrap;
   background: white;
 }
+@media screen and (max-width: 768px) {
+  .header .navbar {
+    order: 4;
+    flex-flow: column;
+    padding-top: 30px;
+    margin: 0;
+  }
+}
 .header .navbar .navbar_items:not(:first-of-type) {
   margin-left: 100px;
   font-size: 16px;
   font-weight: 500;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .header .navbar .navbar_items:not(:first-of-type) {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+.header .navbar .navbar_items:not(:first-of-type) a {
+  display: inline-block;
   position: relative;
   padding-bottom: 2px;
 }
@@ -299,6 +393,7 @@ img {
 }
 .header .navbar .DPList {
   margin-right: 25px;
+  transition: 0.3s ease-in-out;
 }
 .header .navbar .DPList > a {
   padding-right: 25px;
@@ -325,18 +420,29 @@ img {
   height: 0;
   position: absolute;
   top: 100%;
-  left: 0;
-  padding-top: 10px;
-  padding-left: 45px;
+  left: 5%;
+  padding: 10px 0 10px 45px;
   background: white;
   width: 19%;
   border-radius: 5px;
   box-shadow: 5px 8px 10px rgba(21, 38, 24, 0.5);
   transition: 0.3s ease-in-out;
 }
+@media screen and (max-width: 768px) {
+  .header .navbar .DPList .district {
+    position: relative;
+    box-shadow: none;
+    padding: 0;
+  }
+}
 .header .navbar .DPList .district--show {
   visibility: visible;
-  height: 265%;
+  height: 270%;
+}
+@media screen and (max-width: 768px) {
+  .header .navbar .DPList .district--show {
+    box-shadow: none;
+  }
 }
 .header .navbar .DPList .district .district_items {
   font-size: 16px;
@@ -347,6 +453,12 @@ img {
   margin-top: 5px;
   display: inline-block;
   position: relative;
+}
+@media screen and (max-width: 768px) {
+  .header .navbar .DPList .district .district_items a {
+    margin-left: 48px;
+    font-size: 14px;
+  }
 }
 .header .navbar .DPList .district .district_items a::after {
   content: "";
@@ -401,7 +513,7 @@ img {
   font-size: 22px;
   font-weight: 900;
   color: #000;
-  margin: 20px 0;
+  margin: 0 0 20px 0;
 }
 .banner .banner_txtBox .content {
   overflow: hidden;
@@ -473,6 +585,7 @@ img {
   flex-flow: column;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 }
 .boxList .boxList_headline {
   font-size: 24px;
@@ -480,22 +593,38 @@ img {
   margin: 15px auto 10px auto;
 }
 .boxList .cardBox {
+  position: relative;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-content: center;
   width: 100%;
+  height: 700px;
   overflow-x: scroll;
 }
 .boxList .cardBox::-webkit-scrollbar {
-  height: 5px;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .boxList .cardBox {
+    height: 350px;
+    flex-flow: row nowrap;
+    overflow-x: scroll;
+  }
 }
 .boxList .cardBox .card {
-  flex-basis: 25%;
-  min-width: 200px;
-  margin: 0 5px 5px 5px;
+  width: calc(25% - 10px);
+  height: 48%;
+  min-width: 250px;
+  margin: 0 5px 10px 5px;
   padding: 10px;
   border: 2px solid #152618;
   border-radius: 10px;
+}
+@media screen and (max-width: 768px) {
+  .boxList .cardBox .card {
+    width: calc(33.3333333333% - 40px);
+    height: auto;
+  }
 }
 .boxList .cardBox .card .card_pic {
   width: 100%;
@@ -506,9 +635,10 @@ img {
   border-radius: 10px;
 }
 .boxList .cardBox .card .card_info {
+  height: 40%;
   display: flex;
   flex-flow: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
 }
 .boxList .cardBox .card .card_info .title {

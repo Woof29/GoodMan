@@ -77,6 +77,15 @@
   background: rgba($color, $opacity);
 }
 
+//漢堡選單
+@mixin horizontal-bar($bar-width, $bar-height, $bar-color) {
+  width: #{$bar-width}px;
+  height: #{$bar-height}px;
+  background-color: $bar-color;
+  margin: 2px 0;
+}
+
+//按鈕重製
 %btn--reset {
   border: none;
   outline: none;

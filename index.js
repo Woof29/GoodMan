@@ -1,3 +1,12 @@
+//漢堡選單開關動畫
+const hamburgerIcon = document.querySelector(".header_hamburgerIcon");
+const header = document.querySelector(".header");
+
+hamburgerIcon.addEventListener("click", function () {
+  hamburgerIcon.classList.toggle("active");
+  header.classList.toggle("menuExtend");
+});
+
 //navbar的下拉選單
 let dropDownBtn = document.querySelector(".DPList");
 let districtMenu = document.querySelector(".district");
@@ -10,6 +19,7 @@ function showDistrictMenu(e) {
   if (node == "A" || node == "IMG") {
     districtMenu.classList.toggle("district--show");
     iconArrow.classList.toggle("icon-arrow--open");
+    header.classList.toggle("sonMenuExtend");
   } else {
     return;
   }
@@ -22,6 +32,7 @@ function closeDistrictMenu(e) {
   if (node !== "A" && node !== "IMG" && node !== "UL") {
     districtMenu.classList.remove("district--show");
     iconArrow.classList.remove("icon-arrow--open");
+    header.classList.remove("sonMenuExtend");
   }
 } //點擊空白處關閉選單
 
@@ -504,8 +515,7 @@ const cardBox = document.querySelector(".cardBox");
 function printCard() {
   let len = taichungRamen.length;
   let str = "";
-  // console.log(taichungRamen[1].rate);
-  for (let i = 0; i < len; i++) {
+  for (let i = 0; i < 8; i++) {
     str +=
       '<a href="#" class="card"><div class="card_pic"><img src="https://fakeimg.pl/300x200/200" ></div><div class="card_info"><h3 class="title">' +
       taichungRamen[i].name +
