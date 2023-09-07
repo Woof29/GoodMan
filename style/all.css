@@ -256,26 +256,27 @@ img {
     width: 33.333%;
   }
   .header .header_hamburgerIcon.active .bar:nth-child(1) {
-    transform: translateY(12px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg);
   }
   .header .header_hamburgerIcon.active .bar:nth-child(2) {
     opacity: 0;
   }
   .header .header_hamburgerIcon.active .bar:nth-child(3) {
-    transform: translateY(-12px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
   }
   .header .header_hamburgerIcon .bar {
     width: 30px;
     height: 4px;
-    background-color: #333;
+    background-color: #152618;
     margin: 2px 0;
     transition: 0.2s ease-in-out;
+    border-radius: 5px;
   }
   .header .header_hamburgerIcon .bar:nth-child(2) {
-    margin-top: 6px;
+    margin-top: 4px;
   }
   .header .header_hamburgerIcon .bar:nth-child(3) {
-    margin-top: 6px;
+    margin-top: 4px;
   }
 }
 .header .header_LOGO {
@@ -431,6 +432,7 @@ img {
 }
 @media screen and (max-width: 768px) {
   .header .navbar .DPList .district {
+    width: 100%;
     position: relative;
     box-shadow: none;
     padding: 0;
@@ -726,14 +728,17 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .footer .footer_LOGO {
-  width: 50%;
+  width: auto;
   height: 50px;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 50px;
+  position: absolute;
+  top: 50%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  margin-right: 25px;
 }
 .footer .footer_LOGO a {
   text-indent: 101%;
@@ -743,11 +748,26 @@ img {
   background: url(../assets/LOGO/GOODMAN_LOGO.png) no-repeat center/100%;
   transform: scale(1.5);
 }
+@media screen and (max-width: 768px) {
+  .footer .footer_LOGO a {
+    transform: none;
+  }
+}
 .footer .footer_info {
-  width: 50%;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 63%;
+  transform: translate(-50%, -50%);
+  margin-left: 25px;
 }
 .footer .footer_info li {
-  padding-left: 30px;
+  padding-left: 25px;
+}
+@media screen and (max-width: 768px) {
+  .footer .footer_info li {
+    font-size: 14px;
+  }
 }
 .footer .footer_info .phone {
   position: relative;
@@ -756,7 +776,8 @@ img {
   content: "";
   position: absolute;
   left: 0;
-  top: 5px;
+  top: 50%;
+  transform: translateY(-50%);
   height: 16px;
   width: 16px;
   background: url(../assets/icon/phone_icon.png) no-repeat center/cover;
@@ -768,7 +789,8 @@ img {
   content: "";
   position: absolute;
   left: 0;
-  top: 6px;
+  top: 50%;
+  transform: translateY(-50%);
   height: 16px;
   width: 16px;
   background: url(../assets/icon/instagram_icon.png) no-repeat center/cover;
@@ -780,7 +802,8 @@ img {
   content: "";
   position: absolute;
   left: 0;
-  top: 5px;
+  top: 50%;
+  transform: translateY(-50%);
   height: 16px;
   width: 20px;
   background: url(../assets/icon/email_icon.png) no-repeat center/cover;
@@ -788,6 +811,16 @@ img {
 
 .copyright {
   width: 100%;
+  position: absolute;
+  bottom: -86%;
   text-align: center;
   margin-top: 10px;
+}
+@media screen and (max-width: 768px) {
+  .copyright {
+    position: absolute;
+    bottom: -55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }/*# sourceMappingURL=all.css.map */

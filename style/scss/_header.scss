@@ -36,7 +36,7 @@
       width: 33.333%;
       &.active {
         .bar:nth-child(1) {
-          transform: translateY(12px) rotate(45deg);
+          transform: translateY(10px) rotate(45deg);
         }
 
         .bar:nth-child(2) {
@@ -44,20 +44,21 @@
         }
 
         .bar:nth-child(3) {
-          transform: translateY(-12px) rotate(-45deg);
+          transform: translateY(-10px) rotate(-45deg);
         }
       }
       .bar {
-        @include horizontal-bar(30, 4, #333);
+        @include horizontal-bar(30, 4, $color--dark);
         transition: 0.2s ease-in-out;
+        border-radius: 5px;
       }
 
       .bar:nth-child(2) {
-        margin-top: 6px;
+        margin-top: 4px;
       }
 
       .bar:nth-child(3) {
-        margin-top: 6px;
+        margin-top: 4px;
       }
     }
   }
@@ -204,6 +205,7 @@
         box-shadow: 5px 8px 10px rgba($color: #152618, $alpha: 0.5);
         transition: 0.3s ease-in-out;
         @include rwd(768) {
+          width: 100%;
           position: relative;
           box-shadow: none;
           padding: 0;
