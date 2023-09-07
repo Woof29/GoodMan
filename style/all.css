@@ -241,6 +241,7 @@ img {
     align-content: start;
     height: 130px;
     transition: 0.3s ease-in-out;
+    box-shadow: 0px 2px 10px rgba(21, 38, 24, 0.3);
   }
   .header.menuExtend {
     height: 322px;
