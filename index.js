@@ -510,13 +510,16 @@ const taichungRamen = [
   },
 ];
 
-//For boxList card
+//For cardBox card
 const cardBox = document.querySelector(".cardBox");
-function printCard() {
+const select = document.querySelectorAll(".district_items a");
+// let dataDistrict = taichungRamen.district;
+// let selDistrict = select[i].e.target.id;
+function printCard(e) {
   let len = taichungRamen.length;
-  let str = "";
+  let cardContent = "";
   for (let i = 0; i < len; i++) {
-    str +=
+    cardContent +=
       '<a href="#" class="card"><div class="card_pic"><img src="https://fakeimg.pl/300x200/200" ></div><div class="card_info"><h3 class="title">' +
       taichungRamen[i].name +
       '</h3><div class="address">地址: <span>' +
@@ -525,6 +528,12 @@ function printCard() {
       taichungRamen[i].rate +
       '</span></div><img src="assets/icon/ETstars.png" class="nocrop" alt="空星星"/></div></div></a>';
   }
-  cardBox.innerHTML = str;
+  cardBox.innerHTML = cardContent;
 }
+
 printCard();
+
+// console.log(select.e);
+// select.addEventListener("click", function (e) {
+//   console.log(e.target.dataset.value);
+// });
