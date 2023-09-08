@@ -4,7 +4,6 @@
   color-scheme: light;
   color: rgb(0, 0, 0);
   background-color: #fff;
-  // position: relative;
   /* font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,7 +15,6 @@
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  // position: relative;
   @include rwd(768) {
     padding: 130px 20px 0 20px;
   }

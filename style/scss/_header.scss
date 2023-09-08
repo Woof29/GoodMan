@@ -212,7 +212,7 @@
         }
         &--show {
           visibility: visible;
-          height: auto;
+          height: 235%;
           @include rwd(768) {
             box-shadow: none;
           }
@@ -227,7 +227,7 @@
             display: inline-block;
             position: relative;
             @include rwd(768) {
-              margin-left: 48px;
+              margin-left: 30px;
               font-size: 14px;
             }
             &::after {

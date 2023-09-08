@@ -515,7 +515,7 @@ const cardBox = document.querySelector(".cardBox");
 function printCard() {
   let len = taichungRamen.length;
   let str = "";
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < len; i++) {
     str +=
       '<a href="#" class="card"><div class="card_pic"><img src="https://fakeimg.pl/300x200/200" ></div><div class="card_info"><h3 class="title">' +
       taichungRamen[i].name +
