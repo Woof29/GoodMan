@@ -212,7 +212,7 @@
         }
         &--show {
           visibility: visible;
-          height: 270%;
+          height: auto;
           @include rwd(768) {
             box-shadow: none;
           }
