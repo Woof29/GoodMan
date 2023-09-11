@@ -23,7 +23,9 @@
         <span class="bar"></span>
       </div>
       <h1 class="header_LOGO"><a href="#">品牌LOGO</a></h1>
-      <div class="header_searchbar"><input type="text" /></div>
+      <div class="header_searchbar">
+        <input class="searchInput" type="text" />
+      </div>
       <div class="header_login"><button class="login_btn">Login</button></div>
       <ul class="navbar">
         <li class="navbar_items DPList">
@@ -31,20 +33,20 @@
             >請選擇區域<img src="assets/icon/down.png" class="icon-arrow"
           /></a>
           <ul class="district" id="district-sel">
-            <li class="district_items"><a href="#" id="中區">中區</a></li>
-            <li class="district_items"><a href="#" id="東區">東區</a></li>
-            <li class="district_items"><a href="#" id="西區">西區</a></li>
-            <li class="district_items"><a href="#" id="南區">南區</a></li>
-            <li class="district_items"><a href="#" id="北區">北區</a></li>
-            <li class="district_items"><a href="#" id="西屯區">西屯區</a></li>
-            <li class="district_items"><a href="#" id="南屯區">南屯區</a></li>
-            <li class="district_items"><a href="#" id="北屯區">北屯區</a></li>
-            <li class="district_items"><a href="#" id="山線">山線</a></li>
-            <li class="district_items"><a href="#" id="海線">海線</a></li>
-            <li class="district_items"><a href="#" id="屯區">屯區</a></li>
+            <li class="district_items" id="中區">中區</li>
+            <li class="district_items" id="東區">東區</li>
+            <li class="district_items" id="西區">西區</li>
+            <li class="district_items" id="南區">南區</li>
+            <li class="district_items" id="北區">北區</li>
+            <li class="district_items" id="西屯區">西屯區</li>
+            <li class="district_items" id="南屯區">南屯區</li>
+            <li class="district_items" id="北屯區">北屯區</li>
+            <li class="district_items" id="山線">山線</li>
+            <li class="district_items" id="海線">海線</li>
+            <li class="district_items" id="屯區">屯區</li>
           </ul>
         </li>
-        <li class="navbar_items contact"><a href="#">聯絡我</a></li>
+        <li class="navbar_items contact"><a href="#">新增店家</a></li>
         <li class="navbar_items support"><a href="#">尋求幫助</a></li>
         <li class="navbar_items dateMe"><a href="#">請我吃拉麵</a></li>
       </ul>
@@ -64,7 +66,7 @@
       </div>
 
       <div class="boxList">
-        <h2 class="boxList_headline">熱門店家</h2>
+        <h2 class="boxList_headline">所有店家</h2>
         <div class="cardBox">
           <!-- <a href="#" class="card">
             <div class="card_pic">
@@ -76,25 +78,21 @@
                 地址: <span>403台中市西區模範市場一巷31號</span>
               </div>
               <div class="rate">
-                <div class="rating">
-                  <img
-                    src="assets/icon/RTstars.png"
-                    class="cropped"
-                    alt="評分星星"
-                  />
-                  <span>4.9</span>
+                <div class="star_rating">
+                  <span class="star"></span>
+                  <span class="star"></span>
+                  <span class="star"></span>
+                  <span class="star"></span>
+                  <span class="star"></span>
                 </div>
-                <img
-                  src="assets/icon/ETstars.png"
-                  class="nocrop"
-                  alt="空星星"
-                />
+                <img src="assets/icon/ETstars.png" class="empty" alt="空星星" />
+                <span class="score">4.9</span>
               </div>
             </div>
           </a> -->
         </div>
 
-        <button class="boxList_btn btn--viewMore">view more</button>
+        <!-- <button class="boxList_btn btn--viewMore">view more</button> -->
       </div>
 
       <div class="footer">

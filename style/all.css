@@ -323,7 +323,7 @@ img {
   background: url(../assets/icon/magnifying-glass.png) no-repeat center center/40%;
   opacity: 0.7;
 }
-.header .header_searchbar input {
+.header .header_searchbar .searchInput {
   width: 100%;
   border-radius: 35px;
   height: 30px;
@@ -450,20 +450,20 @@ img {
 .header .navbar .DPList .district .district_items {
   font-size: 16px;
   font-weight: 500;
-  width: 20%;
-}
-.header .navbar .DPList .district .district_items a {
+  width: -moz-fit-content;
+  width: fit-content;
   margin-top: 5px;
-  display: inline-block;
+  display: block;
   position: relative;
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
-  .header .navbar .DPList .district .district_items a {
+  .header .navbar .DPList .district .district_items {
     margin-left: 30px;
     font-size: 14px;
   }
 }
-.header .navbar .DPList .district .district_items a::after {
+.header .navbar .DPList .district .district_items::after {
   content: "";
   position: absolute;
   top: 0;
@@ -475,10 +475,10 @@ img {
   transform: scaleX(0);
   transform-origin: bottom left;
 }
-.header .navbar .DPList .district .district_items a:hover {
+.header .navbar .DPList .district .district_items:hover {
   color: #152618;
 }
-.header .navbar .DPList .district .district_items a:hover::after {
+.header .navbar .DPList .district .district_items:hover::after {
   transform: scaleX(1);
 }
 
@@ -612,6 +612,7 @@ img {
   width: calc(25% - 10px);
   height: auto;
   min-width: 250px;
+  min-height: 340px;
   margin: 0 5px 10px 5px;
   padding: 10px;
   border: 2px solid #152618;
@@ -666,8 +667,9 @@ img {
   height: 30px;
   position: relative;
   overflow: hidden;
+  display: flex;
 }
-.boxList .cardBox .card .card_info .rate .nocrop {
+.boxList .cardBox .card .card_info .rate .empty {
   display: block;
   height: 100%;
   width: 100%;
@@ -675,7 +677,15 @@ img {
      object-fit: cover;
   margin-left: -20%;
 }
-.boxList .cardBox .card .card_info .rate .rating {
+.boxList .cardBox .card .card_info .rate .score {
+  position: absolute;
+  top: 70%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-weight: 500;
+}
+.boxList .cardBox .card .card_info .rate .star_rating {
   position: absolute;
   top: 0;
   left: 0;
@@ -684,19 +694,12 @@ img {
   overflow: hidden;
   display: flex;
 }
-.boxList .cardBox .card .card_info .rate .rating .cropped {
-  display: block;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-left: -20%;
-}
-.boxList .cardBox .card .card_info .rate .rating span {
-  line-height: 2.5;
-  margin-left: -18%;
-  font-size: 12px;
-  font-weight: 500;
+.boxList .cardBox .card .card_info .rate .star_rating .star {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  margin: 2px 6px 0 0;
+  background: url("../assets/icon/RTstars_single.png") no-repeat center/cover;
 }
 .boxList .btn--viewMore {
   margin: 10px auto 0 auto;

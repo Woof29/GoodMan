@@ -29,6 +29,7 @@
       width: calc((100% / 4) - 10px);
       height: auto;
       min-width: 250px;
+      min-height: 340px;
       margin: 0 5px 10px 5px;
       padding: 10px;
       border: 2px solid $color--dark;
@@ -69,14 +70,23 @@
           height: 30px;
           position: relative;
           overflow: hidden;
-          .nocrop {
+          display: flex;
+          .empty {
             display: block;
             height: 100%;
             width: 100%;
             object-fit: cover;
             margin-left: -20%;
           }
-          .rating {
+          .score {
+            position: absolute;
+            top: 70%;
+            left: 65%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            font-weight: 500;
+          }
+          .star_rating {
             position: absolute;
             top: 0;
             left: 0;
@@ -85,18 +95,13 @@
             overflow: hidden;
             display: flex;
 
-            .cropped {
-              display: block;
-              height: 100%;
-              width: 100%;
-              object-fit: cover;
-              margin-left: -20%;
-            }
-            span {
-              line-height: 2.5;
-              margin-left: -18%;
-              font-size: 12px;
-              font-weight: 500;
+            .star {
+              display: inline-block;
+              width: 26px;
+              height: 26px;
+              margin: 2px 6px 0 0;
+              background: url("../assets/icon/RTstars_single.png") no-repeat
+                center / cover;
             }
           }
         }
