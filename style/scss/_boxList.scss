@@ -34,6 +34,9 @@
       padding: 10px;
       border: 2px solid $color--dark;
       border-radius: 10px;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-around;
       @include rwd(768) {
         width: calc((100% / 3) - 40px);
         height: auto;
@@ -42,7 +45,7 @@
         width: 100%;
         margin-bottom: 10px;
         img {
-          height: 40%;
+          height: 100%;
           border-radius: 10px;
         }
       }
@@ -71,37 +74,36 @@
           position: relative;
           overflow: hidden;
           display: flex;
-          .empty {
-            display: block;
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            margin-left: -20%;
-          }
           .score {
             position: absolute;
-            top: 70%;
+            top: 60%;
             left: 65%;
             transform: translate(-50%, -50%);
+            margin-left: 10px;
             font-size: 12px;
             font-weight: 500;
           }
-          .star_rating {
+          .star_container {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             height: 100%;
             width: 100%;
             overflow: hidden;
             display: flex;
 
             .star {
-              display: inline-block;
-              width: 26px;
-              height: 26px;
+              width: 24px;
+              height: 24px;
               margin: 2px 6px 0 0;
               background: url("../assets/icon/RTstars_single.png") no-repeat
-                center / cover;
+                center / 100%;
+            }
+
+            .empty {
+              background: url("../assets/icon/ETstars_single.png") no-repeat
+                center / 100%;
             }
           }
         }

@@ -12,7 +12,7 @@ let dropDownBtn = document.querySelector(".DPList");
 let districtMenu = document.querySelector(".district");
 let iconArrow = document.querySelector(".icon-arrow");
 
-dropDownBtn.addEventListener("click", showDistrictMenu, true);
+dropDownBtn.addEventListener("click", showDistrictMenu);
 function showDistrictMenu(e) {
   e.preventDefault();
   let node = e.target.nodeName;
@@ -25,11 +25,11 @@ function showDistrictMenu(e) {
   }
 } //開關下拉式選單
 
-window.addEventListener("click", closeDistrictMenu);
+document.addEventListener("click", closeDistrictMenu);
 function closeDistrictMenu(e) {
-  e.preventDefault();
-  let node = e.target.nodeName;
-  if (node !== "A" && node !== "IMG" && node !== "UL") {
+  // e.preventDefault();
+  let DPList = header.contains(e.target);
+  if (!DPList) {
     districtMenu.classList.remove("district--show");
     iconArrow.classList.remove("icon-arrow--open");
     header.classList.remove("sonMenuExtend");
@@ -512,18 +512,12 @@ const taichungRamen = [
 
 //渲染店家卡片內容
 const cardBox = document.querySelector(".cardBox");
+const starRatingContainer = cardBox.querySelector(".RTcontainer");
 function printCard(district) {
-  // function renderStars(district) {
-  //   let starRatingContainer = document.querySelector(".star_rating");
-  //   let stars = document.querySelector(".star");
-  //   let wholeStars = Math.round(district.item.rate);
-  // }
-
   if (district.length === 0) {
     cardBox.innerHTML = "<h1>沒有資料QQ</h1>";
     return;
   }
-  function starsNum(district) {}
   let len = district.length;
   let cardContent = "";
   for (let i = 0; i < len; i++) {
@@ -534,18 +528,30 @@ function printCard(district) {
       district[i].name +
       '</h3><div class="address">地址: <span>' +
       district[i].address +
-      '</span></div><div class="rate"><div class="star_rating"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div><img src="assets/icon/ETstars.png" class="empty" alt="空星星" /><span class="score">' +
+      '</span></div><div class="rate"><div class="star_container"><span class="empty star"></span><span class="empty star"></span><span class="empty star"></span><span class="empty star"></span><span class="empty star"></span></div><div class="star_container RTcontainer">';
+    cardContent += renderStars(district, i);
+    cardContent +=
+      '</div><span class="score">' +
       district[i].rate +
       "</span></div></div></a>";
   }
   cardBox.innerHTML = cardContent;
+}
+
+//依照各家評分渲染星星數
+function renderStars(district, storeNo) {
+  let starRatingContainer = "";
+  let score = Math.round(district[storeNo].rate);
+  for (let i = 0; i < score; i++) {
+    starRatingContainer += '<span class="star"></span>';
+  }
+  return starRatingContainer;
 }
 printCard(taichungRamen); //預設全部店家
 
 //點擊下拉選單的選項更換相對應區域的店家
 let BoxListTitle = document.querySelector(".boxList_headline");
 function switchDistrict(e) {
-  // let BoxListTitle = document.querySelector(".boxList_headline");
   let selDistrict = e.target.id;
   let TownDistrict = taichungRamen.filter(function (item) {
     return item.district == selDistrict;
@@ -632,6 +638,10 @@ searchInput.addEventListener("keyup", function (e) {
   }
 });
 function SearchAction(keywords) {
+  if (keywords == "") {
+    alert("請輸入關鍵字!!");
+    return;
+  }
   searchInput.value = "";
   let result = taichungRamen.filter(function (item) {
     const nameMatch = item.name.match(keywords);

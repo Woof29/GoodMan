@@ -617,6 +617,9 @@ img {
   padding: 10px;
   border: 2px solid #152618;
   border-radius: 10px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
 }
 @media screen and (max-width: 768px) {
   .boxList .cardBox .card {
@@ -629,7 +632,7 @@ img {
   margin-bottom: 10px;
 }
 .boxList .cardBox .card .card_pic img {
-  height: 40%;
+  height: 100%;
   border-radius: 10px;
 }
 .boxList .cardBox .card .card_info {
@@ -669,37 +672,33 @@ img {
   overflow: hidden;
   display: flex;
 }
-.boxList .cardBox .card .card_info .rate .empty {
-  display: block;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-left: -20%;
-}
 .boxList .cardBox .card .card_info .rate .score {
   position: absolute;
-  top: 70%;
+  top: 60%;
   left: 65%;
   transform: translate(-50%, -50%);
+  margin-left: 10px;
   font-size: 12px;
   font-weight: 500;
 }
-.boxList .cardBox .card .card_info .rate .star_rating {
+.boxList .cardBox .card .card_info .rate .star_container {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 100%;
   width: 100%;
   overflow: hidden;
   display: flex;
 }
-.boxList .cardBox .card .card_info .rate .star_rating .star {
-  display: inline-block;
-  width: 26px;
-  height: 26px;
+.boxList .cardBox .card .card_info .rate .star_container .star {
+  width: 24px;
+  height: 24px;
   margin: 2px 6px 0 0;
-  background: url("../assets/icon/RTstars_single.png") no-repeat center/cover;
+  background: url("../assets/icon/RTstars_single.png") no-repeat center/100%;
+}
+.boxList .cardBox .card .card_info .rate .star_container .empty {
+  background: url("../assets/icon/ETstars_single.png") no-repeat center/100%;
 }
 .boxList .btn--viewMore {
   margin: 10px auto 0 auto;
