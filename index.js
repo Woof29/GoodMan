@@ -592,6 +592,8 @@ function SearchAction(keywords) {
     return;
   }
   searchInput.value = "";
+  searchInput.blur();
+  window.scroll(0, 300);
   let result = taichungRamen.filter(function (item) {
     const nameMatch = item.name.match(keywords);
     const addressMatch = item.address.match(keywords);
