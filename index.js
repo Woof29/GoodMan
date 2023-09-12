@@ -458,6 +458,13 @@ const taichungRamen = [
     link: "https://goo.gl/maps/TgZUxbzZKqD5AiJk9",
     rate: "4.6",
   },
+  {
+    name: "麵屋灯川",
+    address: "404台中市北區太原路二段229號",
+    district: "北區",
+    link: "https://goo.gl/maps/gU8EMZWumrjig3sc8",
+    rate: "5",
+  },
 ];
 
 //渲染店家卡片內容
@@ -593,7 +600,7 @@ function SearchAction(keywords) {
   }
   searchInput.value = "";
   searchInput.blur();
-  window.scroll(0, 300);
+  window.scrollTo(0, 300);
   let result = taichungRamen.filter(function (item) {
     const nameMatch = item.name.match(keywords);
     const addressMatch = item.address.match(keywords);
