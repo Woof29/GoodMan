@@ -676,15 +676,6 @@ img {
   overflow: hidden;
   display: flex;
 }
-.boxList .cardBox .card .card_info .rate .score {
-  position: absolute;
-  top: 60%;
-  left: 65%;
-  transform: translate(-50%, -50%);
-  margin-left: 10px;
-  font-size: 12px;
-  font-weight: 500;
-}
 .boxList .cardBox .card .card_info .rate .star_container {
   position: absolute;
   top: 50%;
@@ -694,6 +685,11 @@ img {
   width: 100%;
   overflow: hidden;
   display: flex;
+}
+.boxList .cardBox .card .card_info .rate .star_container .score {
+  line-height: 2.5;
+  font-size: 14px;
+  font-weight: 500;
 }
 .boxList .cardBox .card .card_info .rate .star_container .star {
   width: 24px;

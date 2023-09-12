@@ -74,15 +74,6 @@
           position: relative;
           overflow: hidden;
           display: flex;
-          .score {
-            position: absolute;
-            top: 60%;
-            left: 65%;
-            transform: translate(-50%, -50%);
-            margin-left: 10px;
-            font-size: 12px;
-            font-weight: 500;
-          }
           .star_container {
             position: absolute;
             top: 50%;
@@ -92,6 +83,11 @@
             width: 100%;
             overflow: hidden;
             display: flex;
+            .score {
+              line-height: 2.5;
+              font-size: 14px;
+              font-weight: 500;
+            }
 
             .star {
               width: 24px;
