@@ -5,6 +5,9 @@ const header = document.querySelector(".header");
 hamburgerIcon.addEventListener("click", function () {
   hamburgerIcon.classList.toggle("active");
   header.classList.toggle("menuExtend");
+  districtMenu.classList.remove("district--show");
+  iconArrow.classList.remove("icon-arrow--open");
+  header.classList.remove("sonMenuExtend");
 });
 
 //navbar的下拉選單
