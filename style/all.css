@@ -249,22 +249,26 @@ img {
   .header.sonMenuExtend {
     height: 630px;
   }
-  .header .header_hamburgerIcon {
+  .header .hamburgerIconContainer {
+    width: 33.333%;
+  }
+  .header .hamburgerIconContainer .hamburgerIcon {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    width: 33.333%;
+    width: -moz-fit-content;
+    width: fit-content;
   }
-  .header .header_hamburgerIcon.active .bar:nth-child(1) {
+  .header .hamburgerIconContainer .hamburgerIcon.active .bar:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
   }
-  .header .header_hamburgerIcon.active .bar:nth-child(2) {
+  .header .hamburgerIconContainer .hamburgerIcon.active .bar:nth-child(2) {
     opacity: 0;
   }
-  .header .header_hamburgerIcon.active .bar:nth-child(3) {
+  .header .hamburgerIconContainer .hamburgerIcon.active .bar:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
   }
-  .header .header_hamburgerIcon .bar {
+  .header .hamburgerIconContainer .hamburgerIcon .bar {
     width: 30px;
     height: 4px;
     background-color: #152618;
@@ -272,10 +276,10 @@ img {
     transition: 0.2s ease-in-out;
     border-radius: 5px;
   }
-  .header .header_hamburgerIcon .bar:nth-child(2) {
+  .header .hamburgerIconContainer .hamburgerIcon .bar:nth-child(2) {
     margin-top: 4px;
   }
-  .header .header_hamburgerIcon .bar:nth-child(3) {
+  .header .hamburgerIconContainer .hamburgerIcon .bar:nth-child(3) {
     margin-top: 4px;
   }
 }

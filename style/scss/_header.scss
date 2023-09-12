@@ -29,36 +29,40 @@
     &.sonMenuExtend {
       height: 630px;
     }
-    .header_hamburgerIcon {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
+    .hamburgerIconContainer {
       width: 33.333%;
-      &.active {
-        .bar:nth-child(1) {
-          transform: translateY(10px) rotate(45deg);
+      // height: 50px;
+      .hamburgerIcon {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        width: fit-content;
+        &.active {
+          .bar:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+          }
+
+          .bar:nth-child(2) {
+            opacity: 0;
+          }
+
+          .bar:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+          }
+        }
+        .bar {
+          @include horizontal-bar(30, 4, $color--dark);
+          transition: 0.2s ease-in-out;
+          border-radius: 5px;
         }
 
         .bar:nth-child(2) {
-          opacity: 0;
+          margin-top: 4px;
         }
 
         .bar:nth-child(3) {
-          transform: translateY(-10px) rotate(-45deg);
+          margin-top: 4px;
         }
-      }
-      .bar {
-        @include horizontal-bar(30, 4, $color--dark);
-        transition: 0.2s ease-in-out;
-        border-radius: 5px;
-      }
-
-      .bar:nth-child(2) {
-        margin-top: 4px;
-      }
-
-      .bar:nth-child(3) {
-        margin-top: 4px;
       }
     }
   }

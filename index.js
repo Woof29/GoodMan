@@ -1,5 +1,5 @@
 //漢堡選單開關動畫
-const hamburgerIcon = document.querySelector(".header_hamburgerIcon");
+const hamburgerIcon = document.querySelector(".hamburgerIcon");
 const header = document.querySelector(".header");
 
 hamburgerIcon.addEventListener("click", function () {
@@ -28,11 +28,15 @@ function showDistrictMenu(e) {
 document.addEventListener("click", closeDistrictMenu);
 function closeDistrictMenu(e) {
   // e.preventDefault();
-  let DPList = header.contains(e.target);
-  if (!DPList) {
+  let node = e.target;
+  if (node === hamburgerIcon || hamburgerIcon.contains(node)) {
+    return;
+  } else if (node.nodeName !== "A" && node.nodeName !== "IMG") {
     districtMenu.classList.remove("district--show");
     iconArrow.classList.remove("icon-arrow--open");
     header.classList.remove("sonMenuExtend");
+    hamburgerIcon.classList.remove("active");
+    header.classList.remove("menuExtend");
   }
 } //點擊空白處關閉選單
 
