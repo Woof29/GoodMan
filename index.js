@@ -1,3 +1,9 @@
+//初始化firebase即時資料庫
+firebase.initializeApp({
+  databaseURL: "https://goodman-web-default-rtdb.firebaseio.com/",
+});
+const database = firebase.database();
+
 //漢堡選單開關動畫
 const hamburgerIcon = document.querySelector(".hamburgerIcon");
 const header = document.querySelector(".header");
