@@ -1,8 +1,17 @@
-const db = getDatabase();
-getRamenData(db).then((data) => {
-  let ramenData = data;
-  console.log(ramenData);
-});
+main();
+
+let ramenData = [];
+
+async function main() {
+  let db = getDatabase();
+  ramenData = await getRamenData(db);
+  printCard(ramenData);
+
+  //搜尋監聽
+  searchInput.on("keyup", SearchAction);
+
+  districtMenu.on("click", switchDistrict);
+}
 
 function getDatabase() {
   const config = {
@@ -20,56 +29,48 @@ async function getRamenData(db) {
   });
 }
 
-// database.ref("taichungRamen").once("value", function (snapshot) {
-//   let data = snapshot.val();
-//   console.log(data);
-//   printCard(data);
-// });
-
 //漢堡選單開關動畫
-const hamburgerIcon = document.querySelector(".hamburgerIcon");
-const header = document.querySelector(".header");
+let hamburgerIcon = $(".hamburgerIcon");
+let header = $(".header");
+let hamburgerGB = $(".hamburgerBG");
 
-hamburgerIcon.addEventListener("click", function () {
-  hamburgerIcon.classList.toggle("active");
-  header.classList.toggle("menuExtend");
-  districtMenu.classList.remove("district--show");
-  iconArrow.classList.remove("icon-arrow--open");
-  header.classList.remove("sonMenuExtend");
+hamburgerIcon.click(function () {
+  hamburgerGB.toggleClass("BGtoggle");
+  hamburgerIcon.toggleClass("active");
+  header.toggleClass("menuExtend");
+  districtMenu.removeClass("district--show");
+  iconArrow.removeClass("icon-arrow--open");
+  header.removeClass("sonMenuExtend");
 });
 
 //navbar的下拉選單
-let dropDownBtn = document.querySelector(".DPList");
-let districtMenu = document.querySelector(".district");
-let iconArrow = document.querySelector(".icon-arrow");
+let dropDownBtn = $(".DPList");
+let districtMenu = $(".district");
+let iconArrow = $(".icon-arrow");
 
-dropDownBtn.addEventListener("click", showDistrictMenu);
+dropDownBtn.click(showDistrictMenu);
 function showDistrictMenu(e) {
   e.preventDefault();
   let node = e.target.nodeName;
   if (node == "A" || node == "IMG") {
-    districtMenu.classList.toggle("district--show");
-    iconArrow.classList.toggle("icon-arrow--open");
-    header.classList.toggle("sonMenuExtend");
+    districtMenu.toggleClass("district--show");
+    iconArrow.toggleClass("icon-arrow--open");
+    header.toggleClass("sonMenuExtend");
   } else {
     return;
   }
 } //開關下拉式選單
 
-document.addEventListener("click", closeDistrictMenu);
-function closeDistrictMenu(e) {
-  // e.preventDefault();
-  let node = e.target;
-  if (node === hamburgerIcon || hamburgerIcon.contains(node)) {
-    return;
-  } else if (node.nodeName !== "A" && node.nodeName !== "IMG") {
-    districtMenu.classList.remove("district--show");
-    iconArrow.classList.remove("icon-arrow--open");
-    header.classList.remove("sonMenuExtend");
-    hamburgerIcon.classList.remove("active");
-    header.classList.remove("menuExtend");
-  }
-} //點擊空白處關閉選單
+//點擊空白處關閉選單
+hamburgerGB.click(closeDistrictMenu);
+function closeDistrictMenu() {
+  hamburgerGB.removeClass("BGtoggle");
+  districtMenu.removeClass("district--show");
+  iconArrow.removeClass("icon-arrow--open");
+  header.removeClass("sonMenuExtend");
+  hamburgerIcon.removeClass("active");
+  header.removeClass("menuExtend");
+}
 
 //台中拉麵店家資料
 // const taichungRamen = [
@@ -496,27 +497,27 @@ function closeDistrictMenu(e) {
 // ];
 
 //渲染店家卡片內容
-const cardBox = document.querySelector(".cardBox");
-const starRatingContainer = cardBox.querySelector(".RTcontainer");
-function printCard(district) {
-  if (district.length === 0) {
-    cardBox.innerHTML = "<h1>沒有資料QQ</h1>";
+const cardBox = $(".cardBox");
+const starRatingContainer = $(".RTcontainer");
+function printCard(data) {
+  if (data.length === 0) {
+    cardBox.html("<h1>沒有資料QQ</h1>");
     return;
   }
-  let len = district.length;
+  let len = data.length;
   let cardContent = "";
   for (let i = 0; i < len; i++) {
-    cardContent += `<a href=" ${district[i].link}" class="card"><div class="card_pic"><img src="https://fakeimg.pl/300x200/200" ></div><div class="card_info"><h3 class="title">${district[i].name}</h3><div class="address">地址: <span>${district[i].address}</span></div><div class="rate"><div class="star_container"><span class="empty star"></span><span class="empty star"></span><span class="empty star"></span><span class="empty star"></span><span class="empty star"></span><span class="score">${district[i].rate}</span></div><div class="star_container RTcontainer">`;
-    cardContent += renderStars(district, i);
+    cardContent += `<a href=" ${data[i].link}" class="card"><div class="card_pic"><img src="https://fakeimg.pl/300x200/200" ></div><div class="card_info"><h3 class="title">${data[i].name}</h3><div class="address">地址: <span>${data[i].address}</span></div><div class="rate"><div class="star_container"><span class="empty star"></span><span class="empty star"></span><span class="empty star"></span><span class="empty star"></span><span class="empty star"></span><span class="score">${data[i].rate}</span></div><div class="star_container RTcontainer">`;
+    cardContent += renderStars(data, i);
     cardContent += `</div></div></div></a>`;
   }
-  cardBox.innerHTML = cardContent;
+  cardBox.html(cardContent);
 }
 
 //依照各家評分渲染星星數
-function renderStars(district, storeNo) {
+function renderStars(data, storeNo) {
   let starRatingContainer = "";
-  let score = Math.round(district[storeNo].rate);
+  let score = Math.round(data[storeNo].rate);
   for (let i = 0; i < score; i++) {
     starRatingContainer += `<span class="star"></span>`;
   }
@@ -525,13 +526,15 @@ function renderStars(district, storeNo) {
 // printCard(taichungRamen); //預設全部店家
 
 //點擊下拉選單的選項更換相對應區域的店家
-let BoxListTitle = document.querySelector(".boxList_headline");
-function switchDistrict(e) {
-  let selDistrict = e.target.id;
-  let TownDistrict = taichungRamen.filter(function (item) {
+
+let BoxListTitle = $(".boxList_headline");
+function switchDistrict(event) {
+  console.log(event.target.id);
+  let selDistrict = event.target.id;
+  let TownDistrict = ramenData.filter(function (item) {
     return item.district == selDistrict;
   });
-  let MtDistrict = taichungRamen.filter(function (item) {
+  let MtDistrict = ramenData.filter(function (item) {
     return (
       item.district == "豐原區" ||
       item.district == "潭子區" ||
@@ -544,7 +547,7 @@ function switchDistrict(e) {
       item.district == "和平區"
     );
   });
-  let SeaDistrict = taichungRamen.filter(function (item) {
+  let SeaDistrict = ramenData.filter(function (item) {
     return (
       item.district == "大甲區" ||
       item.district == "清水區" ||
@@ -556,7 +559,7 @@ function switchDistrict(e) {
       item.district == "大肚區"
     );
   });
-  let TunDistrict = taichungRamen.filter(function (item) {
+  let TunDistrict = ramenData.filter(function (item) {
     return (
       item.district == "大里區" ||
       item.district == "太平區" ||
@@ -564,7 +567,7 @@ function switchDistrict(e) {
       item.district == "烏日區"
     );
   });
-  if (e.target.nodeName !== "LI") {
+  if (event.target.nodeName !== "LI") {
     return;
   }
 
@@ -579,53 +582,50 @@ function switchDistrict(e) {
     case "北屯區":
       // console.log(TownDistrict);
       printCard(TownDistrict);
-      BoxListTitle.innerHTML = selDistrict + "店家";
+      BoxListTitle.text(selDistrict + "店家");
       break;
     case "山線": {
       // console.log(MtDistrict);
       printCard(MtDistrict);
-      BoxListTitle.innerHTML = selDistrict + "店家";
+      BoxListTitle.text(selDistrict + "店家");
       break;
     }
     case "海線": {
       // console.log(SeaDistrict);
       printCard(SeaDistrict);
-      BoxListTitle.innerHTML = selDistrict + "店家";
+      BoxListTitle.text(selDistrict + "店家");
       break;
     }
     case "屯區": {
       // console.log(TunDistrict);
       printCard(TunDistrict);
-      BoxListTitle.innerHTML = selDistrict + "店家";
+      BoxListTitle.text(selDistrict + "店家");
       break;
     }
   }
 }
-districtMenu.addEventListener("click", switchDistrict);
+
+const KEYCODE_ENTER = 13;
 
 //搜尋功能
-const searchInput = document.querySelector(".searchInput");
-searchInput.addEventListener("keyup", function (e) {
-  if (e.key === "Enter") {
-    // console.log(searchInput.value);
-    const keywords = searchInput.value.trim();
-    SearchAction(keywords);
-  }
-});
-function SearchAction(keywords) {
+let searchInput = $(".searchInput");
+function SearchAction(event) {
+  if (event.which != KEYCODE_ENTER) return;
+  let keywords = searchInput.val().trim();
+
   if (keywords == "") {
-    alert("請輸入關鍵字!!");
+    alert("請輸入關鍵3213213字!!");
     return;
   }
-  searchInput.value = "";
+  searchInput.val("");
   searchInput.blur();
   window.scrollTo(0, 300);
-  let result = taichungRamen.filter(function (item) {
+  let result = ramenData.filter(function (item) {
     const nameMatch = item.name.match(keywords);
     const addressMatch = item.address.match(keywords);
     return nameMatch || addressMatch;
   });
   // console.log(result);
-  BoxListTitle.innerHTML = "包含" + keywords + "的店家";
+  BoxListTitle.text("包含" + keywords + "的店家");
   printCard(result);
 }
