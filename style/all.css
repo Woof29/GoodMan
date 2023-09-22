@@ -31,22 +31,23 @@
   width: 100%;
   max-width: 1200px;
   margin: auto;
+  position: relative;
 }
 @media screen and (max-width: 768px) {
   .wrap {
     padding: 130px 20px 0 20px;
   }
 }
-
-.hamburgerBG {
+.wrap .hamburgerBG {
   display: none;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
 }
-.hamburgerBG.BGtoggle {
+.wrap .hamburgerBG.BGtoggle {
   display: block;
 }
 
